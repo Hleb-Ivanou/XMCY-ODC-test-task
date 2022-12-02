@@ -1,2 +1,11 @@
 <p>all-photos works!</p>
-<img [src]="" alt="">
+
+<ng-container *ngIf="this.images$ | async as images; else loader">
+    <app-image-list [isNavigateAllow]="false" [images]="images"></app-image-list>
+</ng-container>
+
+<ng-template #loader>
+    <div class="loader">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

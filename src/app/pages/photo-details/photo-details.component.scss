@@ -1,0 +1,16 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    mat-card {
+        max-width: 60vh;
+
+        mat-card-actions {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+
+}

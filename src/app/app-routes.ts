@@ -9,4 +9,8 @@ export const ROUTES: Route[] = [
       path: 'favorites',
       loadComponent: () => import('./pages/favorite-photos/favorite-photos.component').then(mod => mod.FavoritePhotosComponent)
     },
+    {
+      path: 'photos/:id',
+      loadComponent: () => import('./pages/photo-details/photo-details.component').then(mod => mod.PhotoDetailsComponent)
+    },
   ];
