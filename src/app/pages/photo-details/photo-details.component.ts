@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable, switchMap } from 'rxjs';
 import { Image } from 'src/app/models/image';
-import { ActivatedRoute, ParamMap, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouterModule } from '@angular/router';
 import { LoadImgService } from 'src/app/services/load-img/load-img.service';
 import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';

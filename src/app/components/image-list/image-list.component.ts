@@ -1,13 +1,14 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule, getLocaleCurrencySymbol } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Image } from '../../models/image';
 import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
 import { Router, RouterModule } from '@angular/router';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-image-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, MatGridListModule, RouterModule],
   templateUrl: './image-list.component.html',
   styleUrls: ['./image-list.component.scss']
 })

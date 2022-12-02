@@ -1,4 +1,9 @@
 .image {
     width: 200px;
     height: 300px;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    }
 }

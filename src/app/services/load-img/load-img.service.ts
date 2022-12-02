@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { delay, forkJoin, Observable, of, repeat, take } from 'rxjs';
+import { Observable, of} from 'rxjs';
 import { Image } from '../../models/image';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

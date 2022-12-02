@@ -1,4 +1,3 @@
-<p>all-photos works!</p>
 
 <ng-container *ngIf="this.images$ | async as images; else loader">
     <app-image-list [isNavigateAllow]="false" [images]="images"></app-image-list>
