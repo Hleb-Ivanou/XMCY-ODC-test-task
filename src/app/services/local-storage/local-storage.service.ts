@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Image } from '../../models/image';
 
 @Injectable({
-  providedIn: 'any'
+  providedIn: 'any',
 })
 export class LocalStorageService {
   readonly collectionName = 'favorites';
@@ -10,7 +10,7 @@ export class LocalStorageService {
   public saveData(image: Image) {
     const images = this.getData();
     if (this.getImgIndex(image.id, this.getData()) !== -1) {
-      return
+      return;
     }
     images.push(image);
     localStorage.setItem(this.collectionName, JSON.stringify(images));
@@ -25,10 +25,9 @@ export class LocalStorageService {
     const images = this.getData();
 
     localStorage.setItem(this.collectionName, JSON.stringify([...images].filter((el) => el.id !== id)));
-  
   }
 
   private getImgIndex(id: string, images: Image[]): number {
-    return images.findIndex((el) => el.id === id)
+    return images.findIndex((el) => el.id === id);
   }
 }
