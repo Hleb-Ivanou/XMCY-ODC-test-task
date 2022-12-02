@@ -1,7 +1,5 @@
-
-        <mat-grid-list cols="3" rowHeight="350px">
-            <mat-grid-tile *ngFor="let image of images">
-                <img class="image" [src]="image.url" alt="" (click)="onClick(image)">
-            </mat-grid-tile>
-          </mat-grid-list>
-        
+<mat-grid-list cols="3" rowHeight="350px">
+    <mat-grid-tile *ngFor="let image of images">
+        <img class="image" [src]="image.url" alt="" (click)="onClick(image)">
+    </mat-grid-tile>
+  </mat-grid-list>

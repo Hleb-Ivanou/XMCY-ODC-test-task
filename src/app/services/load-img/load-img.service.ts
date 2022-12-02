@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
 import { Image } from '../../models/image';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'any',
@@ -10,8 +9,6 @@ export class LoadImgService {
   private readonly thumbBaseUrl = 'https://picsum.photos/200/300?image=';
   private readonly fullBaseUrl = 'https://picsum.photos/id/';
   private readonly delay = Math.floor(Math.random() * (300 - 200 + 1)) + 200;
-
-  constructor(private http: HttpClient) {}
 
   loadImages(limit: number): Observable<Image[]> {
     const arr = [];
@@ -29,6 +26,6 @@ export class LoadImgService {
   }
 
   loadFullImage(id: string): Observable<Image> {
-    return of({ id, url: `${this.fullBaseUrl}${id}/800/800` });
+    return of({ id, url: `${this.fullBaseUrl}${id}/1000/1000` });
   }
 }

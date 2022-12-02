@@ -9,9 +9,11 @@ export class LocalStorageService {
 
   public saveData(image: Image) {
     const images = this.getData();
-    if (this.getImgIndex(image.id, this.getData()) !== -1) {
+
+    if (images.findIndex((el) => el.id === image.id) !== -1) {
       return;
     }
+
     images.push(image);
     localStorage.setItem(this.collectionName, JSON.stringify(images));
   }
@@ -21,13 +23,10 @@ export class LocalStorageService {
 
     return images ? JSON.parse(images) : [];
   }
+
   public removeData(id: string) {
     const images = this.getData();
 
     localStorage.setItem(this.collectionName, JSON.stringify([...images].filter((el) => el.id !== id)));
-  }
-
-  private getImgIndex(id: string, images: Image[]): number {
-    return images.findIndex((el) => el.id === id);
   }
 }

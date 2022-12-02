@@ -9,7 +9,7 @@ import { Image } from '../../models/image';
   selector: 'app-favorite-photos',
   imports: [CommonModule, ImageListComponent],
   templateUrl: './favorite-photos.component.html',
-  styleUrls: ['./favorite-photos.component.scss']
+  styleUrls: ['./favorite-photos.component.scss'],
 })
 export class FavoritePhotosComponent implements OnInit {
   images: Image[] = [];
@@ -17,8 +17,8 @@ export class FavoritePhotosComponent implements OnInit {
   constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit(): void {
-    this.images = this.localStorageService.getData()
-      .map((img) => ({...img, url: `https://picsum.photos/id/${img.id}/200/300`}) );
+    this.images = this.localStorageService
+      .getData()
+      .map((img) => ({ ...img, url: `https://picsum.photos/id/${img.id}/200/300` }));
   }
-
 }

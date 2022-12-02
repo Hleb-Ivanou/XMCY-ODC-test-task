@@ -4,7 +4,7 @@ import { Observable, switchMap } from 'rxjs';
 import { Image } from 'src/app/models/image';
 import { ActivatedRoute, ParamMap, RouterModule } from '@angular/router';
 import { LoadImgService } from 'src/app/services/load-img/load-img.service';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
 
@@ -13,7 +13,7 @@ import { LocalStorageService } from 'src/app/services/local-storage/local-storag
   standalone: true,
   imports: [CommonModule, RouterModule, MatCardModule, MatButtonModule],
   templateUrl: './photo-details.component.html',
-  styleUrls: ['./photo-details.component.scss']
+  styleUrls: ['./photo-details.component.scss'],
 })
 export class PhotoDetailsComponent implements OnInit {
   photo$?: Observable<Image>;
@@ -27,15 +27,11 @@ export class PhotoDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.photo$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => {
-        const id = params.get('id') as string;
-        return this.loadImgService.loadFullImage(id);
-      })
+      switchMap((params: ParamMap) => this.loadImgService.loadFullImage(params.get('id') as string)),
     );
   }
 
   onClick(id: string) {
     this.localStorageService.removeData(id);
   }
-
 }

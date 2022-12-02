@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Image } from '../../models/image';
 import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
 import { Router, RouterModule } from '@angular/router';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-image-list',
   standalone: true,
   imports: [CommonModule, MatGridListModule, RouterModule],
   templateUrl: './image-list.component.html',
-  styleUrls: ['./image-list.component.scss']
+  styleUrls: ['./image-list.component.scss'],
 })
 export class ImageListComponent {
   @Input() images: Image[] = [];
