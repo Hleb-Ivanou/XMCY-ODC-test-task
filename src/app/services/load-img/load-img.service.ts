@@ -19,13 +19,13 @@ export class LoadImgService {
     return of(arr).pipe(delay(this.delay * limit));
   }
 
-  generateImage(): Image {
+  loadFullImage(id: string): Observable<Image> {
+    return of({ id, url: `${this.fullBaseUrl}${id}/1000/1000` });
+  }
+
+  private generateImage(): Image {
     const id = Math.round(Math.random() * 1000).toString();
 
     return { id, url: `${this.thumbBaseUrl}${id}` };
-  }
-
-  loadFullImage(id: string): Observable<Image> {
-    return of({ id, url: `${this.fullBaseUrl}${id}/1000/1000` });
   }
 }
