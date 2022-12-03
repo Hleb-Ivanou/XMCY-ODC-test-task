@@ -15,7 +15,7 @@ import { Image } from '../../models/image';
   styleUrls: ['./all-photos.component.scss'],
 })
 export class AllPhotosComponent implements OnInit {
-  readonly limitImgs = 6;
+  readonly limitImgs = 9;
 
   images$?: Observable<Image[]>;
   isLoader$ = new BehaviorSubject<boolean>(true);

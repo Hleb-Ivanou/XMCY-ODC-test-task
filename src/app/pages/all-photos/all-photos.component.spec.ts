@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AllPhotosComponent } from './all-photos.component';
@@ -7,9 +8,11 @@ describe('AllPhotosComponent', () => {
   let fixture: ComponentFixture<AllPhotosComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AllPhotosComponent],
-    }).compileComponents();
+    await TestBed.overrideComponent(AllPhotosComponent, {
+      set: {
+        schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      },
+    });
 
     fixture = TestBed.createComponent(AllPhotosComponent);
     component = fixture.componentInstance;

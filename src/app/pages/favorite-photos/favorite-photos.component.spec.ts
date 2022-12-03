@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FavoritePhotosComponent } from './favorite-photos.component';
@@ -7,9 +8,7 @@ describe('FavoritePhotosComponent', () => {
   let fixture: ComponentFixture<FavoritePhotosComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [FavoritePhotosComponent],
-    }).compileComponents();
+    await TestBed.overrideComponent(FavoritePhotosComponent, {});
 
     fixture = TestBed.createComponent(FavoritePhotosComponent);
     component = fixture.componentInstance;

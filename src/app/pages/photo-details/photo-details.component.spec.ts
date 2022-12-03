@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -11,7 +12,7 @@ describe('PhotoDetailsComponent', () => {
   beforeEach(async () => {
     await TestBed.overrideComponent(PhotoDetailsComponent, {
       set: {
-        imports: [RouterTestingModule],
+        imports: [CommonModule, RouterTestingModule],
         schemas: [CUSTOM_ELEMENTS_SCHEMA],
       },
     });
